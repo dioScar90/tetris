@@ -1,17 +1,4 @@
-const createTetrisBlocks = () => {
-  const tetris = document.querySelector('.tetris')
-  const { gridTemplateRows, gridTemplateColumns } = getComputedStyle(tetris)
-  const blocksNumber = gridTemplateRows.split(' ').length * gridTemplateColumns.split(' ').length
-
-  const fragment = document.createDocumentFragment()
-
-  for (let i = 0; i < blocksNumber; i++) {
-    const div = document.createElement('div')
-    fragment.append(div)
-  }
-
-  tetris.replaceChildren(fragment)
-}
+const createTetrisBlocks = () => document.querySelector('.container').append(new TetrisGame)
 
 const criarTodasAsPecas = () => {
   const criarPeca = (matrizPeca, classePeca) => {
@@ -82,3 +69,4 @@ const init = () => {
 }
 
 document.addEventListener('DOMContentLoaded', init)
+
