@@ -1,4 +1,4 @@
-const createTetrisBlocks = () => document.querySelector('.container').append(new TetrisGame)
+const createTetrisGame = () => document.querySelector('.container').append(new TetrisGame)
 
 const criarTodasAsPecas = () => {
   const criarPeca = (matrizPeca, classePeca) => {
@@ -64,7 +64,7 @@ const criarTodasAsPecas = () => {
 
 
 const init = () => {
-  createTetrisBlocks()
+  createTetrisGame()
   // criarTodasAsPecas()
 }
 

@@ -6,6 +6,11 @@ class TetrisBlock extends HTMLElement {
 
 class TetrisGame extends HTMLElement {
   constructor() {
+    if (document.body.matches(':has(tetris-game)')) {
+      // Does not allow to instantiate twice or more.
+      throw new Error('TetrisGame has been already included in the document.')
+    }
+
     super()
   }
 
