@@ -1,4 +1,11 @@
-const createTetrisGame = () => document.querySelector('.container').append(new TetrisGame)
+import TetrisBlock from "./components/TetrisBlock.js"
+import TetrisGame from "./components/TetrisGame.js"
+import TetrisPieceI from "./components/TetrisPieceI.js"
+
+const getMainContainer = () => document.querySelector('main.container')
+const getTetrisGame = () => document.querySelector('tetris-game')
+
+const createTetrisGame = () => getMainContainer().append(new TetrisGame)
 
 const criarTodasAsPecas = () => {
   const criarPeca = (matrizPeca, classePeca) => {
@@ -62,8 +69,13 @@ const criarTodasAsPecas = () => {
   criarPeca(pecaZ, 'piece-Z')
 }
 
+const defineCustomElements = () => {
+  customElements.define('tetris-block', TetrisBlock)
+  customElements.define('tetris-game', TetrisGame)
+}
 
 const init = () => {
+  defineCustomElements()
   createTetrisGame()
   // criarTodasAsPecas()
 }

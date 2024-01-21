@@ -1,8 +1,4 @@
-class TetrisBlock extends HTMLElement {
-  constructor() {
-    super()
-  }
-}
+import TetrisBlock from "./TetrisBlock.js"
 
 class TetrisGame extends HTMLElement {
   constructor() {
@@ -30,6 +26,5 @@ class TetrisGame extends HTMLElement {
   }
 }
 
-customElements.define('tetris-block', TetrisBlock)
-customElements.define('tetris-game', TetrisGame)
+export default TetrisGame
 
